@@ -1,0 +1,17 @@
+{
+  "settings": {
+    "volume": 1
+  },
+  "game": {
+    "current_scene": "test_town",
+    "player": {
+      "name": "Player 1",
+      "facing": 2
+    },
+    "scene_states": {
+      "test_town": {
+        "x": 0,"y": 0
+      }
+    }
+  }
+}
