@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/menus/main_menu/main_menu.unity
+    path: Assets/Resources/Scenes/menus/main_menu/main_menu.unity
   - enabled: 1
-    path: Assets/Scenes/maps/world1/TestTown/town.unity
+    path: Assets/Resources/Scenes/maps/world1/TestTown/town.unity
