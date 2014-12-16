@@ -3,7 +3,7 @@
     "volume": 1
   },
   "game": {
-    "current_scene": "test_town",
+    "current_node": "test_town_1",
     "player": {
       "name": "Player 1",
       "facing": 2
