@@ -1,8 +1,7 @@
 {
   "nodes": {
-    "test_town_1": { "scene": "test_town", "x": 5, "y": -1, "facing": 0 },
-    "test_town_2": { "scene": "test_town", "x": 0, "y": 0, "facing": 1 },
-    "test_town_3": { "scene": "test_town", "x": 1, "y": 1, "facing": 2 },
-    "test_town_4": { "scene": "test_town", "x": 2, "y": 2, "facing": 3 }
+    "test_town_1": { "scene": "test_town", "x": -1, "y": 0, "facing": 2 }
+    "test_town_house_1_outside": { "scene": "test_town", "x": 1, "y": 0, "facing": 3 }
+    "test_town_house_1": { "scene": "house1", "x": -1, "y": 0, "facing": 1 }
   }
 }

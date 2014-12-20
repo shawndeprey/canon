@@ -51,6 +51,9 @@ public class GM : MonoBehaviour {
 		// These mappings map a string name to the scene index in the Unity build settings. This
 		// ensures we can easily load a scene by a custom string name we give it.
 		scenes.Add("main_menu", 0);
+
+		// Test Town
 		scenes.Add("test_town", 1);
+		scenes.Add("house1", 2);
 	}	
 }

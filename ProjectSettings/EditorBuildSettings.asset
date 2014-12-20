@@ -9,3 +9,5 @@ EditorBuildSettings:
     path: Assets/Resources/Scenes/Menu/MainMenu/main_menu.unity
   - enabled: 1
     path: Assets/Resources/Scenes/Map/World1/TestTown/town.unity
+  - enabled: 1
+    path: Assets/Resources/Scenes/Map/World1/TestTown/house1/house1.unity
