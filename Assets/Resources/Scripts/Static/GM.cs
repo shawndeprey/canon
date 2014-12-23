@@ -5,10 +5,17 @@ using System;
 
 // Game Manager
 public class GM : MonoBehaviour {
-	public static GameObject playerPrefab;
 	private static Dictionary<string, int> scenes = new Dictionary<string, int>();
+
+	// Set up the static namesets required to load the player prefab
+	public static GameObject playerPrefab;
 	private static Player _player;
 	public static Player player{ get{ return _player; } set{ _player = value; } }
+
+	// Set up the static namesets required to load the scene fading prefab
+	public static GameObject fadePrefab;
+	private static SceneFading _fade;
+	public static SceneFading fade{ get{ return _fade; } set{ _fade = value; } }
 
 	public static void FirstTimeInit () {
 		// Load all needed JSON files from the HDD and cache them in memory
@@ -19,15 +26,16 @@ public class GM : MonoBehaviour {
 
 		// Load the player prefab from file and initialize it in game
 		GM.playerPrefab = (GameObject)Instantiate( Resources.Load("Prefabs/Characters/Player/player") );
+		GM.player = GM.playerPrefab.GetComponent<Player>();				// Map the actual player component to the GM.player namespace
+		GM.player.transform.position = new Vector3(-5, 0, 0);			// Move the player to the start position of the menu
 
-		// Map the actual player component to the GM.player namespace
-		GM.player = GM.playerPrefab.GetComponent<Player>();
+		// Load the scene fading prefab from file and initialize it in game
+		GM.fadePrefab = (GameObject)Instantiate( Resources.Load("Prefabs/System/fade") );
+		GM.fade = GM.fadePrefab.GetComponent<SceneFading>();			// Map the actual fade component to the GM.fade namespace
 
-		// Move the player to the start position of the menu
-		GM.player.transform.position = new Vector3(-5, 0, 0);
-
-		// Ensure the player component parent game object is not destroyed when we change scenes
+		// Ensure our global game object components exist between scenes
 		DontDestroyOnLoad(GM.player.gameObject);
+		DontDestroyOnLoad(GM.fade.gameObject);
 	}
 
 	public static void LoadNode (string node_name) {
@@ -39,7 +47,7 @@ public class GM : MonoBehaviour {
 		string scene_name = FM.nav["nodes"][node_name]["scene"];
 
 		// Load the scene by index
-		Application.LoadLevel( scenes[scene_name] );
+		GM.fade.InitSceneTransition( scenes[scene_name] );
 	}
 
 	public static string CurrentNode () {
